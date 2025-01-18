@@ -4,10 +4,13 @@
     const amigoSecreto = document.querySelector('#resultado'); // Referencia a el espacio designado en el html para insertar el amigo secreto
     const botonSortearAmigo = document.querySelector('#btn-sortear') // Referencia al boton de sorteo para manipular sus estados
     let amigosGuardados = []; // Arreglo 
+    let nombreAmigo = inputAmigo.value.trim(); 
 
 
     const agregarAmigo = () => {
 
+        nombreAmigo = inputAmigo.value.trim();
+        
         // Validamos que si ya existe  un amigo secreto
         if(amigoSecreto.textContent != '') {
             amigoSecreto.textContent = ''; 
@@ -23,7 +26,7 @@
         }
         
         // Validamos si el amigo ya se encuentra registrado
-        if (amigosGuardados.includes(inputAmigo.value.trim())) {
+        if (amigosGuardados.includes(nombreAmigo)) {
             alert('Este amigo ya está en la lista');
             return;
         }
@@ -66,7 +69,7 @@
 
     const validarAmigo = () => {
 
-        const nombreAmigo = inputAmigo.value.trim(); // Obtenemos el nombre del amigo
+        nombreAmigo = inputAmigo.value.trim(); // Obtenemos el nombre del amigo
 
         // Validamos si el campo esta vacio para aplicar estilos de error
         if (nombreAmigo === '') {
