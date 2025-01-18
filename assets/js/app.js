@@ -98,6 +98,16 @@
     // se pierda el foco y el campo quede vacio, añada estilo de error
     inputAmigo.addEventListener('blur', validarAmigo);
 
+    // Creamos un evento relacionado al campo amigo para agregar
+    // el amigo con una tecla especifica
+    inputAmigo.addEventListener('keypress',(event) =>{
+        // Verifica si la tecla presionada es Enter
+        if(event.key === 'Enter'){
+            // Se ejecuta la funcion para agregar al amigo
+            agregarAmigo(); 
+        }
+    })
+
     window.agregarAmigo = agregarAmigo;
     window.sortearAmigo = sortearAmigo;
 })();
