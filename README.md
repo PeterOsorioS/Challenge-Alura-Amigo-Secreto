@@ -33,12 +33,19 @@ La aplicación permite a los usuarios agregar nombres a una lista, realizar el s
     <img src="https://github.com/PeterOsorioS/Challenge-Alura-Amigo-Secreto/blob/Recursos/img_1.png" width="300" style="margin: 10px;"/>
 </p>
 
-*Imagen de ejemplo mostrando la interfaz donde se ingresan los nombres de los amigos.*
+*Imagenes de ejemplo mostrando la interfaz en su version de escritorio y movil, donde se ingresan los nombres de los amigos.*
 
+## Demo
+
+[Haz clic aquí](https://peterosorios.github.io/Challenge-Alura-Amigo-Secreto/)
 
 ## Instalación
 
 1. Clona el repositorio en tu máquina local:
 
 ```bash
+
 git clone https://github.com/PeterOsorioS/Challenge-Alura-Amigo-Secreto.git
+
+```
+
