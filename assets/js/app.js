@@ -3,7 +3,7 @@
     const listaAmigos = document.querySelector('#listaAmigos'); // Referencia a la lista que almacenará a los amigos
     const amigoSecreto = document.querySelector('#resultado'); // Referencia a el espacio designado en el html para insertar el amigo secreto
     const botonSortearAmigo = document.querySelector('#btn-sortear') // Referencia al boton de sorteo para manipular sus estados
-    let amigosGuardados = []; // Arreglo 
+    let amigos = []; // Arreglo que almacena los nombres de los amigos
     let nombreAmigo = inputAmigo.value.trim(); 
 
 
@@ -26,35 +26,29 @@
         }
         
         // Validamos si el amigo ya se encuentra registrado
-        if (amigosGuardados.includes(nombreAmigo)) {
+        if (amigos.includes(nombreAmigo)) {
             alert('Este amigo ya está en la lista');
             return;
         }
 
-        // Creamos un elemento <li> para el nuevo amigo
-        const nuevoAmigo = document.createElement('li');
-        nuevoAmigo.textContent = inputAmigo.value;
-
-        // Añadimos el elemento a la lista
-        listaAmigos.appendChild(nuevoAmigo);
-
+        // Se actualiza el array de amigos
+        amigos.push(nombreAmigo); 
         actualizarListaAmigos();
-
     };
 
     const sortearAmigo = () => {
-        if(amigosGuardados.length > 0){
+        if(amigos.length > 0){
 
             // Generamos un número aleatorio entre 0 y el tamaño del arreglo
-            let random = Math.floor(Math.random() * amigosGuardados.length);
+            let random = Math.floor(Math.random() * amigos.length);
 
             // Asignamos el amigo secreto usando el índice aleatorio
-            amigoSecreto.textContent = `El amigo secreto sorteado es: ${amigosGuardados[random]}`; 
+            amigoSecreto.textContent = `El amigo secreto sorteado es: ${amigos[random]}`; 
 
             // Limpiamos los objetos y bloqueamos el boton de sortear
             listaAmigos.innerHTML = '';
             inputAmigo.value = '';
-            amigosGuardados = [];
+            amigos = [];
             eliminarError();
             botonSortearAmigo.disabled = true;
         }
@@ -82,8 +76,15 @@
     };
 
     const actualizarListaAmigos = () =>{
-        // Actualizamos el arreglo con los valores que contiene la lista de amigos
-        amigosGuardados = Array.from(listaAmigos.querySelectorAll('li')).map(li => li.textContent);
+        // Se limpia la lista de amigos para agregar los elementos 
+        listaAmigos.innerHTML = '';
+
+        // Iteramos el arreglo para agregar los elementos en la lista
+        amigos.forEach((amigo) => {
+            const nuevoAmigo = document.createElement('li');
+            nuevoAmigo.textContent = amigo; // Se crea un elemento <li> para cada amigo
+            listaAmigos.appendChild(nuevoAmigo); // Agregamos el elemento a la lista
+        });
 
         // Desbloqueamos el boton de sortear despues de tener 1 amigo registrado
         if(botonSortearAmigo.disabled = true){
