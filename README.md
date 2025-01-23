@@ -26,7 +26,7 @@ La aplicación permite a los usuarios agregar nombres a una lista, realizar el s
 ## Capturas de Pantalla
 
 <p align="center">
-    <img src="https://github.com/PeterOsorioS/Challenge-Alura-Amigo-Secreto/blob/Recursos/img_5.png" width="116" style="margin: 10px;"/>
+    <img src="https://github.com/PeterOsorioS/Challenge-Alura-Amigo-Secreto/blob/Recursos/img_5.png" width="93" style="margin: 10px;"/>
     <img src="https://github.com/PeterOsorioS/Challenge-Alura-Amigo-Secreto/blob/Recursos/img_2.png" width="300" style="margin: 10px;"/>
     <img src="https://github.com/PeterOsorioS/Challenge-Alura-Amigo-Secreto/blob/Recursos/img_3.png" width="300" style="margin: 10px;"/>
     <img src="https://github.com/PeterOsorioS/Challenge-Alura-Amigo-Secreto/blob/Recursos/img_4.png" width="300" style="margin: 10px;"/>
